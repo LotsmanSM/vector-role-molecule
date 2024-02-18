@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Get from GIT repository'
                 git credentialsId: 'git_ssh',
-                url: 'git@github.com:DemoniumBlack/vector-role-molecule.git',
+                url: 'git@github.com:LotsmanSM/vector-role-molecule.git',
                 branch: 'main'
             }
         }
