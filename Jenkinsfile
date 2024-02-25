@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Get from GIT repository'
                 git credentialsId: 'git_ssh',
-                url: 'git@github.com:LotsmanSM/vector-role-molecule.git',
+                url: 'https://github.com/LotsmanSM/vector-role-molecule',
                 branch: 'main'
             }
         }
@@ -14,8 +14,8 @@ pipeline {
             steps {
                 echo 'Start preparation'
                 sh 'pip3 install -r tox-requirements.txt'
-                sh 'pip install "molecule[lint]"'
-                sh 'pip install "molecule[docker,lint]"'
+                sh 'pip3 install "molecule[lint]"'
+                sh 'pip3 install "molecule[docker,lint]"'
             }
         }
         stage('Start molecule test') {
